@@ -62,3 +62,8 @@ exports.getSources = function() {
       biasGroupId: 3
     }];
 };
+
+exports.getBiasGroupBySource = function(sourceId) {
+  var source = this.getSources().find(source => source.id === sourceId)
+  return this.getBiasGroups().find(biasGroup => biasGroup.id === source.biasGroupId)
+};

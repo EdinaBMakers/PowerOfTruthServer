@@ -12,17 +12,19 @@ exports.getHeadlines = function(req, newsControllerResponse) {
     language: 'en',
     pageSize: isNaN(req.query.pageSize) ? 10 : req.query.pageSize
   }).then(newsApiResponse => {
-    // console.log(newsApiResponse);
+    console.log(newsApiResponse);
+
     newsControllerResponse.json
     (responseTranslatorService.translateHeadlinesResponse(newsApiResponse));
   }).catch(error => {
+    console.error(error);
+
     var errorResponse = {
       status: 'error',
       error: 'PowerOfTruth Server Error',
       provider: 'PowerOfTruth Server'
     };
 
-    // console.log(error);
     newsControllerResponse.json(errorResponse);
   });
 };

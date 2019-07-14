@@ -11,3 +11,15 @@ exports.setupSuccessResponse = function(expectedResponse) {
 
   mockNewsAPI.mockImplementation(() => mockNewsAPIImp);
 };
+
+exports.setupFailureResponse = function() {
+  const mockNewsAPIImp = {
+    v2: {
+      topHeadlines: function() {
+        return Promise.reject(new Error('News API error'));
+      }
+    }
+  }
+
+  mockNewsAPI.mockImplementation(() => mockNewsAPIImp)
+};
