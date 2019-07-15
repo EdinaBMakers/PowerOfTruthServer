@@ -5,4 +5,7 @@ module.exports = function(app) {
 
   app.route('/headlines')
     .get(newsController.getHeadlines);
+
+  app.route('/everything')
+    .get(newsController.getEverything);
 };

@@ -5,6 +5,9 @@ exports.setupSuccessResponse = function(expectedResponse) {
     v2: {
       topHeadlines: function() {
         return Promise.resolve(expectedResponse);
+      },
+      everything: function() {
+        return Promise.resolve(expectedResponse);
       }
     }
   };

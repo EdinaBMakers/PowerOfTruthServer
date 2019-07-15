@@ -53,4 +53,16 @@ describe('Newscontroller', () => {
       });
     });
   });
+
+  describe('getEverything', () => {
+    test('It should respond to the GET method', (done) => {
+      newsApiHelpers.setupSuccessResponse(
+        testResponses.successfulNewsApiResponseWithZeroArticles);
+
+      request(app).get('/everything').then((response) => {
+        expect(response.status).toBe(200);
+        done();
+      });
+    });
+  });
 });
