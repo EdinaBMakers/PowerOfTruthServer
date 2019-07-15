@@ -1,4 +1,4 @@
-exports.successfulNewsApiResponseWithZeroArticles = {
+exports.successfulNewsApiResponseWithZeroArticle = {
   status: "ok",
   totalResults: 0,
   articles: []

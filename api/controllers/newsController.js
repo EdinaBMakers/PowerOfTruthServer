@@ -40,7 +40,9 @@ exports.getEverything = function(req, newsControllerResponse) {
     pageSize: getPageSize(req)
   }).then(newsApiResponse => {
     console.log(newsApiResponse)
-    newsControllerResponse.json(ResponseTranslatorService.translateEverythingResponse(newsApiResponse));
+    newsControllerResponse.json(
+      responseTranslatorService.translateEverythingResponse(newsApiResponse)
+    );
   }).catch(error => {
     var errorResponse = {
       status: "error",

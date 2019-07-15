@@ -1,7 +1,7 @@
 const mockNewsAPI = require('newsapi');
 
 exports.setupSuccessResponse = function(expectedResponse) {
-  const mockNewsAPIImp = {
+  const mockNewsApiImp = {
     v2: {
       topHeadlines: function() {
         return Promise.resolve(expectedResponse);
@@ -11,18 +11,21 @@ exports.setupSuccessResponse = function(expectedResponse) {
       }
     }
   };
-
-  mockNewsAPI.mockImplementation(() => mockNewsAPIImp);
-};
+  
+  mockNewsAPI.mockImplementation(() => mockNewsApiImp);
+}
 
 exports.setupFailureResponse = function() {
-  const mockNewsAPIImp = {
+  const mockNewsApiImp = {
     v2: {
       topHeadlines: function() {
         return Promise.reject(new Error('News API error'));
+      },
+      everything: function() {
+        return Promise.reject(new Error('News API error'));
       }
     }
-  }
+  };
 
-  mockNewsAPI.mockImplementation(() => mockNewsAPIImp)
+  mockNewsAPI.mockImplementation(() => mockNewsApiImp)
 };
