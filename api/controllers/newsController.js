@@ -13,20 +13,9 @@ exports.getHeadlines = function(req, newsControllerResponse) {
     language: 'en',
     pageSize: getPageSize(req)
   }).then(newsApiResponse => {
-    console.log(newsApiResponse);
-
-    newsControllerResponse.json
-    (responseTranslatorService.translateHeadlinesResponse(newsApiResponse));
+    handleHeadlinesResponse(newsControllerResponse, newsApiResponse);
   }).catch(error => {
-    console.error(error);
-
-    var errorResponse = {
-      status: 'error',
-      error: 'PowerOfTruth Server Error',
-      provider: 'PowerOfTruth Server'
-    };
-
-    newsControllerResponse.json(errorResponse);
+    handleError(newsControllerResponse, error);
   });
 };
 
@@ -40,20 +29,9 @@ exports.getHeadlinesByBiasGroupId = function(req, newsControllerResponse) {
     language: 'en',
     pageSize: getPageSize(req)
   }).then(newsApiResponse => {
-    console.log(newsApiResponse);
-
-    newsControllerResponse.json
-    (responseTranslatorService.translateHeadlinesResponse(newsApiResponse));
+    handleHeadlinesResponse(newsControllerResponse, newsApiResponse);
   }).catch(error => {
-    console.error(error);
-
-    var errorResponse = {
-      status: 'error',
-      error: 'PowerOfTruth Server Error',
-      provider: 'PowerOfTruth Server'
-    };
-
-    newsControllerResponse.json(errorResponse);
+    handleError(newsControllerResponse, error);
   });
 };
 
@@ -66,20 +44,9 @@ exports.getHeadlinesBySourceId = function(req, newsControllerResponse) {
     language: 'en',
     pageSize: getPageSize(req)
   }).then(newsApiResponse => {
-    console.log(newsApiResponse);
-
-    newsControllerResponse.json
-    (responseTranslatorService.translateHeadlinesResponse(newsApiResponse));
+    handleHeadlinesResponse(newsControllerResponse, newsApiResponse);
   }).catch(error => {
-    console.error(error);
-
-    var errorResponse = {
-      status: 'error',
-      error: 'PowerOfTruth Server Error',
-      provider: 'PowerOfTruth Server'
-    };
-
-    newsControllerResponse.json(errorResponse);
+    handleError(newsControllerResponse, error);
   });
 };
 
@@ -93,20 +60,9 @@ exports.getHeadlinesByTopic = function(req, newsControllerResponse) {
     language: 'en',
     pageSize: getPageSize(req)
   }).then(newsApiResponse => {
-    console.log(newsApiResponse);
-
-    newsControllerResponse.json
-    (responseTranslatorService.translateHeadlinesResponse(newsApiResponse));
+    handleHeadlinesResponse(newsControllerResponse, newsApiResponse);
   }).catch(error => {
-    console.error(error);
-
-    var errorResponse = {
-      status: 'error',
-      error: 'PowerOfTruth Server Error',
-      provider: 'PowerOfTruth Server'
-    };
-
-    newsControllerResponse.json(errorResponse);
+    handleError(newsControllerResponse, error);
   });
 };
 
@@ -121,19 +77,9 @@ exports.getEverything = function(req, newsControllerResponse) {
     sortBy: 'relevancy',
     pageSize: getPageSize(req)
   }).then(newsApiResponse => {
-    console.log(newsApiResponse)
-    newsControllerResponse.json(
-      responseTranslatorService.translateEverythingResponse(newsApiResponse)
-    );
+    handleHeadlinesResponse(newsControllerResponse, newsApiResponse);
   }).catch(error => {
-    var errorResponse = {
-      status: "error",
-      error: "PowerOfTruth Server Error",
-      provider: "PowerOfTruth Server",
-    };
-
-    console.error(error);
-    newsControllerResponse.json(errorResponse)
+    handleError(newsControllerResponse, error);
   }); 
 };
 
@@ -158,6 +104,26 @@ exports.getTopics = function(req, newsControllerResponse) {
     topics: topics
   });
 };
+
+function handleHeadlinesResponse(newsControllerResponse, newsApiResponse) {
+  console.log(newsApiResponse);
+
+  newsControllerResponse.json(
+    responseTranslatorService.translateEverythingResponse(newsApiResponse)
+  );
+};
+
+function handleError(newsControllerResponse, error) {
+  console.error(error);
+
+  var errorResponse = {
+    status: 'error',
+    error: 'PowerOfTruth Server Error',
+    provider: 'PowerOfTruth Server'
+  };
+
+  newsControllerResponse.json(errorResponse);
+}
 
 function getSourceIds(sources) {
   return sources.map(source => source.id).join(',');
