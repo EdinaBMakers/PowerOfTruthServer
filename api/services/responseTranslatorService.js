@@ -15,7 +15,7 @@ exports.translateHeadlinesResponse = function(newsApiHeadlinesResponse) {
       urlToImage: article.urlToImage,
       publishedAt: article.publishedAt,
       content: article.content,
-      politicalBias: newsMetadataService.getBiasGroupBySource(article.source.id).name
+      politicalBias: newsMetadataService.getBiasGroupBySourceId(article.source.id).name
     });
   });
 
@@ -42,7 +42,7 @@ exports.translateEverythingResponse = function(newsApiEverythingResponse) {
       urlToImage: article.urlToImage,
       publishedAt: article.publishedAt,
       content: article.content,
-      politicalBias: newsMetadataService.getBiasGroupBySource(article.source.id).name
+      politicalBias: newsMetadataService.getBiasGroupBySourceId(article.source.id).name
     });
   });
 

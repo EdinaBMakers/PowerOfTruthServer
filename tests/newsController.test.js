@@ -59,7 +59,7 @@ describe('Newscontroller', () => {
       newsApiHelpers.setupSuccessResponse(
         testResponses.successfulNewsApiResponseWithZeroArticle);
 
-      request(app).get('/everything').then((response) => {
+      request(app).get('/search').then((response) => {
         expect(response.status).toBe(200);
         done();
       });
@@ -69,7 +69,7 @@ describe('Newscontroller', () => {
       newsApiHelpers.setupSuccessResponse(
         testResponses.successfulNewsApiResponseWithZeroArticle);
 
-      request(app).get('/everything').then((response) => {
+      request(app).get('/search').then((response) => {
         expect(response.body).toStrictEqual(testResponses.successfulResponseWithZeroArticle);
         done();
       });
@@ -79,7 +79,7 @@ describe('Newscontroller', () => {
       newsApiHelpers.setupSuccessResponse(
         testResponses.successfullNewsApiResponseWithMultipleArticles);
 
-      request(app).get('/everything').then((response) => {
+      request(app).get('/search').then((response) => {
         expect(response.body).toStrictEqual(testResponses.successfulResponseWithMultipleArticles);
         done();
       });
@@ -88,11 +88,23 @@ describe('Newscontroller', () => {
     test('It should return failure response if News API request failed', (done) => {
       newsApiHelpers.setupFailureResponse();
 
-      request(app).get('/everything').then((response) => {
+      request(app).get('/search').then((response) => {
         expect(response.body.status).toBe('error');
         expect(response.body.error).toBe('PowerOfTruth Server Error');
         done();
       });
     });
   });
+
+  describe('getHeadlinesByBiasGoupId', () => {
+    test('It should respond to the GET method', (done) => {
+      newsApiHelpers.setupSuccessResponse(
+        testResponses.successfulNewsApiResponseWithZeroArticle);
+
+      request(app).get('/headlines/right').then((response) => {
+        expect(response.status).toBe(200);
+        done();
+      });
+    });
+  })
 });
