@@ -12,6 +12,9 @@ module.exports = function(app) {
   app.route('/headlines/source/:sourceId')
     .get(newsController.getHeadlinesBySourceId);
 
+  app.route('/headlines/topic/:topic')
+    .get(newsController.getHeadlinesByTopic);
+
   app.route('/search')
     .get(newsController.getEverything);
 

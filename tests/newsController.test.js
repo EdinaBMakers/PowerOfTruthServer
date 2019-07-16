@@ -134,4 +134,13 @@ describe('Newscontroller', () => {
       });
     });
   });
+
+  describe('getHeadlinesByTopic', () => {
+    test('It should respond to the GET method', (done) => {
+      request(app).get('/headlines/topic/trump').then((response) => {
+        expect(response.status).toBe(200);
+        done();
+      });
+    });
+  });
 });
