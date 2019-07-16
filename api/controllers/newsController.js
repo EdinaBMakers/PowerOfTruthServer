@@ -22,7 +22,7 @@ exports.getHeadlines = function(req, newsControllerResponse) {
 exports.getHeadlinesByBiasGroupId = function(req, newsControllerResponse) {
   const newsapi = new NewsAPI(process.env.GOOGLE_API_KEY);
   var biasGroupId = req.params.biasGroupId;
-  var sources = newsMetadataService.getSourcesGroupByBiasGroupId(biasGroupId);
+  var sources = newsMetadataService.getSourcesByBiasGroupId(biasGroupId);
 
   newsapi.v2.topHeadlines({
     sources: getSourceIds(sources),

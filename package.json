@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand",
     "start": "node server.js"
   },
   "repository": {

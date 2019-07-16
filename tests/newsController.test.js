@@ -106,6 +106,36 @@ describe('Newscontroller', () => {
         done();
       });
     });
+
+    test('It should respond with correct message if News API returns 0 article', (done) => {
+      newsApiHelpers.setupSuccessResponse(
+        testResponses.successfulNewsApiResponseWithZeroArticle);
+
+      request(app).get('/headlines/bias/left').then((response) => {
+        expect(response.body).toStrictEqual(testResponses.successfulResponseWithZeroArticle);
+        done();
+      });
+    });
+
+    test('It should respond with correct message if News API returns multiple articles', (done) => {
+      newsApiHelpers.setupSuccessResponse(
+        testResponses.successfullNewsApiResponseWithMultipleArticlesForLeftBiasGroup);
+
+      request(app).get('/headlines/bias/left').then((response) => {
+        expect(response.body).toStrictEqual(testResponses.successfulResponseWithMultipleArticlesForLeftBiasGroup);
+        done();
+      });
+    });
+
+    test('It should return failure response if News API request failed', (done) => {
+      newsApiHelpers.setupFailureResponse();
+
+      request(app).get('/headlines/bias/left').then((response) => {
+        expect(response.body.status).toBe('error');
+        expect(response.body.error).toBe('PowerOfTruth Server Error');
+        done();
+      });
+    });
   });
 
   describe('getBiasGroups', () => {
