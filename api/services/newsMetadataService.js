@@ -15,8 +15,8 @@ exports.getBiasGroups = function() {
       name: "least biased"
     },
     {
-      id: "rigth-center",
-      name: "rigth-center"
+      id: "right-center",
+      name: "right-center"
     },
     {
       id: "right",

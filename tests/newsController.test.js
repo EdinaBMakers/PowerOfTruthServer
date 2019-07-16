@@ -106,5 +106,14 @@ describe('Newscontroller', () => {
         done();
       });
     });
-  })
+  });
+
+  describe('getBiasGroups', () => {
+    test('It should respond to the GET method', (done) => {
+      request(app).get('/biasGroups').then((response) => {
+        expect(response.status).toBe(200);
+        done();
+      });
+    });
+  });
 });

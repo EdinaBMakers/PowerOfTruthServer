@@ -11,4 +11,7 @@ module.exports = function(app) {
 
   app.route('/search')
     .get(newsController.getEverything);
+
+  app.route('/biasGroups')
+    .get(newsController.getBiasGroups);
 };
