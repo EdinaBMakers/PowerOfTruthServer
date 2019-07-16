@@ -6,10 +6,10 @@ module.exports = function(app) {
   app.route('/headlines')
     .get(newsController.getHeadlines);
 
-  app.route('/headlines/:biasGroupId')
+  app.route('/headlines/bias/:biasGroupId')
     .get(newsController.getHeadlinesByBiasGroupId);
 
-  app.route('/headlines/:sourceId')
+  app.route('/headlines/source/:sourceId')
     .get(newsController.getHeadlinesBySourceId);
 
   app.route('/search')

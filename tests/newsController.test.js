@@ -101,7 +101,7 @@ describe('Newscontroller', () => {
       newsApiHelpers.setupSuccessResponse(
         testResponses.successfulNewsApiResponseWithZeroArticle);
 
-      request(app).get('/headlines/right').then((response) => {
+      request(app).get('/headlines/bias/right').then((response) => {
         expect(response.status).toBe(200);
         done();
       });
@@ -119,7 +119,7 @@ describe('Newscontroller', () => {
 
   describe('getHeadlinesBySourceId', () => {
     test('It should respond to the GET method', (done) => {
-      request(app).get('/headlines/cnn').then((response) => {
+      request(app).get('/headlines/source/cnn').then((response) => {
         expect(response.status).toBe(200);
         done();
       });
