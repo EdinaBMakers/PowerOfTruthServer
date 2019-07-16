@@ -116,4 +116,13 @@ describe('Newscontroller', () => {
       });
     });
   });
+
+  describe('getHeadlinesBySourceId', () => {
+    test('It should respond to the GET method', (done) => {
+      request(app).get('/headlines/cnn').then((response) => {
+        expect(response.status).toBe(200);
+        done();
+      });
+    });
+  });
 });

@@ -9,6 +9,9 @@ module.exports = function(app) {
   app.route('/headlines/:biasGroupId')
     .get(newsController.getHeadlinesByBiasGroupId);
 
+  app.route('/headlines/:sourceId')
+    .get(newsController.getHeadlinesBySourceId);
+
   app.route('/search')
     .get(newsController.getEverything);
 
