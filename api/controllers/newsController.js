@@ -6,9 +6,37 @@ const NewsAPI = require('newsapi');
 
 exports.getHeadlines = function(req, newsControllerResponse) {
   const newsapi = new NewsAPI(process.env.GOOGLE_API_KEY);
+  var sources = newsMetadataService.getSources();
 
   newsapi.v2.topHeadlines({
-    sources: getSourceIds(),
+    sources: getSourceIds(sources),
+    language: 'en',
+    pageSize: getPageSize(req)
+  }).then(newsApiResponse => {
+    console.log(newsApiResponse);
+
+    newsControllerResponse.json
+    (responseTranslatorService.translateHeadlinesResponse(newsApiResponse));
+  }).catch(error => {
+    console.error(error);
+
+    var errorResponse = {
+      status: 'error',
+      error: 'PowerOfTruth Server Error',
+      provider: 'PowerOfTruth Server'
+    };
+
+    newsControllerResponse.json(errorResponse);
+  });
+};
+
+exports.getHeadlinesByBiasGroupId = function(req, newsControllerResponse) {
+  const newsapi = new NewsAPI(process.env.GOOGLE_API_KEY);
+  var biasGroupId = req.params.biasGroupId;
+  var sources = newsMetadataService.getSourcesGroupByBiasGroupId(biasGroupId);
+
+  newsapi.v2.topHeadlines({
+    sources: getSourceIds(sources),
     language: 'en',
     pageSize: getPageSize(req)
   }).then(newsApiResponse => {
@@ -31,10 +59,11 @@ exports.getHeadlines = function(req, newsControllerResponse) {
 
 exports.getEverything = function(req, newsControllerResponse) {
   const newsapi = new NewsAPI(process.env.GOOGLE_API_KEY);
+  var sources = newsMetadataService.getSources();
 
   newsapi.v2.everything({
     q: req.query.q,
-    sources: getSourceIds(),
+    sources: getSourceIds(sources),
     language: 'en',
     sortBy: 'relevancy',
     pageSize: getPageSize(req)
@@ -55,12 +84,12 @@ exports.getEverything = function(req, newsControllerResponse) {
   }); 
 };
 
-function getSourceIds() {
-  return newsMetadataService.getSources().map(source => source.id).join(',');
+function getSourceIds(sources) {
+  return sources.map(source => source.id).join(',');
 };
 
 function getPageSize(req) {
   return isNaN(req.query.pageSize) 
-    ? 10 
+    ? 20 
     : req.query.pageSize;
 }

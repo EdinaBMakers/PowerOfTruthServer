@@ -3,23 +3,23 @@
 exports.getBiasGroups = function() {
   return [
     {
-      id: 1,
+      id: "left",
       name: "left"
     }, 
     {
-      id: 2,
+      id: "left-center",
       name: "left-center"
     },
     {
-      id: 3,
+      id: "least-biased",
       name: "least biased"
     },
     {
-      id: 4,
+      id: "rigth-center",
       name: "rigth-center"
     },
     {
-      id: 5,
+      id: "right",
       name: "right"
     }];
 };
@@ -29,41 +29,45 @@ exports.getSources = function() {
     {
       id: "bbc-news",
       name: "BBC News",
-      biasGroupId: 2
+      biasGroupId: "left-center"
     },
     {
       id: "independent",
       name: "Independent",
-      biasGroupId: 2
+      biasGroupId: "left-center"
     },
     {
       id: "the-huffington-post",
       name: "The Huffington Post",
-      biasGroupId: 1
+      biasGroupId: "left"
     },
     {
       id: "al-jazeera-english",
       name: "Al Jazeera English",
-      biasGroupId: 2
+      biasGroupId: "left-center"
     },
     {
       id: "cnn",
       name: "CNN",
-      biasGroupId: 1
+      biasGroupId: "left"
     },
     {
       id: "daily-mail",
       name: "Daily Mail",
-      biasGroupId: 5
+      biasGroupId: "right"
     },
     {
       id: "the-economist",
       name: "The Economist",
-      biasGroupId: 3
+      biasGroupId: "least-biased"
     }];
 };
 
-exports.getBiasGroupBySource = function(sourceId) {
+exports.getBiasGroupBySourceId = function(sourceId) {
   var source = this.getSources().find(source => source.id === sourceId)
   return this.getBiasGroups().find(biasGroup => biasGroup.id === source.biasGroupId)
+};
+
+exports.getSourcesGroupByBiasGroupId = function(biasGroupId) {
+  return this.getSources().filter(source => source.biasGroupId === biasGroupId);
 };
