@@ -63,6 +63,10 @@ exports.getSources = function() {
     }];
 };
 
+exports.getTopics = function() {
+  return ["Trump", "Brexit", "Bitcoin", "May", "Boris", "EU"];
+};
+
 exports.getBiasGroupBySourceId = function(sourceId) {
   var source = this.getSources().find(source => source.id === sourceId)
   return this.getBiasGroups().find(biasGroup => biasGroup.id === source.biasGroupId)

@@ -125,4 +125,13 @@ describe('Newscontroller', () => {
       });
     });
   });
+
+  describe('getTopics', () => {
+    test('It should respond to the GET method', (done) => {
+      request(app).get('/topics').then((response) => {
+        expect(response.status).toBe(200);
+        done();
+      });
+    });
+  });
 });

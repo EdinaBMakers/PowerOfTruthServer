@@ -121,6 +121,17 @@ exports.getBiasGroups = function(req, newsControllerResponse) {
   });
 };
 
+exports.getTopics = function(req, newsControllerResponse) {
+  var topics = newsMetadataService.getTopics();
+
+  newsControllerResponse.json({
+    status: "ok",
+    totalResults: topics.length,
+    provider: "PowerOfTruth Server",
+    topics: topics
+  });
+};
+
 function getSourceIds(sources) {
   return sources.map(source => source.id).join(',');
 };

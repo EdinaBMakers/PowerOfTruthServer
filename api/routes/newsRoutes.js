@@ -17,4 +17,7 @@ module.exports = function(app) {
 
   app.route('/biasGroups')
     .get(newsController.getBiasGroups);
+
+  app.route('/topics')
+    .get(newsController.getTopics);
 };
