@@ -2,14 +2,21 @@
 
 [![CircleCI](https://circleci.com/gh/EdinaBMakers/PowerOfTruthServer.svg?style=svg)](https://circleci.com/gh/EdinaBMakers/PowerOfTruthServer)
 
-Co-authored-by: lbarber729 lbarber729@hotmail.co.uk
+This is an API backend for a news mobile app. The frontend can be found [here](https://github.com/rayswilling/PowerOfTruth).
 
-Co-authored-by: hughbric mhughes36@live.co.uk
+It is deployed at `https://power-of-truth-server.herokuapp.com/`
 
-Co-authored-by: samkitchen94 samkitchen94@gmail.com
+## API docs
 
-Co-authored-by: EdinaBMakers bolkeny.edina@gmail.com
+### Headlines
 
-Co-authored-by: LisaMcCormack lisamccormack85@gmail.com
+#### GET `headlines`
 
-Co-authored-by: rayswilling swillingray@gmail.com
+the foxy-news team:
+
+Co-authored-by: lbarber729 lbarber729@hotmail.co.uk  
+Co-authored-by: hughbric mhughes36@live.co.uk  
+Co-authored-by: samkitchen94 samkitchen94@gmail.com  
+Co-authored-by: EdinaBMakers bolkeny.edina@gmail.com  
+Co-authored-by: LisaMcCormack lisamccormack85@gmail.com  
+Co-authored-by: rayswilling swillingray@gmail.com  
