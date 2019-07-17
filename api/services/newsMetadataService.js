@@ -15,8 +15,8 @@ exports.getBiasGroups = function() {
       name: "least biased"
     },
     {
-      id: "rigth-center",
-      name: "rigth-center"
+      id: "right-center",
+      name: "right-center"
     },
     {
       id: "right",
@@ -63,11 +63,15 @@ exports.getSources = function() {
     }];
 };
 
+exports.getTopics = function() {
+  return ["Trump", "Brexit", "Bitcoin", "EU"];
+};
+
 exports.getBiasGroupBySourceId = function(sourceId) {
   var source = this.getSources().find(source => source.id === sourceId)
   return this.getBiasGroups().find(biasGroup => biasGroup.id === source.biasGroupId)
 };
 
-exports.getSourcesGroupByBiasGroupId = function(biasGroupId) {
+exports.getSourcesByBiasGroupId = function(biasGroupId) {
   return this.getSources().filter(source => source.biasGroupId === biasGroupId);
 };
