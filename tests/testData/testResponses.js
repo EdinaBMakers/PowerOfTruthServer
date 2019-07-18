@@ -58,7 +58,7 @@ exports.successfulResponseWithMultipleArticles = {
     urlToImage: "https://i.dailymail.co.uk/1s/2019/07/12/23/15984174-0-image-a-5_1562971241648.jpg",
     publishedAt: "2019-07-13T13:12:36+00:00",
     content: "With its breathtaking views across Singapore's Marina Bay not to mention five bedrooms, a swimming pool and an eye-watering £43million price tag, Sir James Dyson's new home-from-home in Asia is a lavish affair indeed.\r\nThe billionaire inventor controversially… [+15480 chars]",
-    politicalBias: "right"
+    politicalBias: "Right-Wing"
   },
   {
     source: {
@@ -72,7 +72,7 @@ exports.successfulResponseWithMultipleArticles = {
     urlToImage: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/07/11/11/07707244.jpg",
     publishedAt: "2019-07-13T13:04:00Z",
     content: "More voters view Boris Johnson as a buffoon than a statesman, a new poll has found.\r\nAnd the survey found that only one in five believe that he can get a better Brexit deal than Theresa May and fewer than two in five think he will deliver on his promise to ta… [+5881 chars]",
-    politicalBias:"left-center"
+    politicalBias:"Left-Center"
   }]
 };
 
@@ -123,7 +123,7 @@ exports.successfulResponseWithMultipleArticlesForLeftBiasGroup = {
     urlToImage: "https://cdn.cnn.com/cnnnext/dam/assets/190714125803-ice-raid-phot-super-tease.jpg",
     publishedAt: "2019-07-16T11:06:38Z",
     content: "William Lopez is a clinical assistant professor at the University of Michigan School of Public Health and author of the book, \"Separated: Family and Community in the Aftermath of an Immigration Raid.\" Nicole Novak is an assistant research scientist at the Uni… [+5784 chars]",
-    politicalBias: "left"
+    politicalBias: "Left-Wing"
   },
   {
     source: {
@@ -137,6 +137,6 @@ exports.successfulResponseWithMultipleArticlesForLeftBiasGroup = {
     urlToImage: "https://img.huffingtonpost.com/asset/5d2cea2226000050000447fe.jpeg?cache=pqj2xVpP3c&ops=1200_630",
     publishedAt: "2019-07-16T09:45:01Z",
     content: "The first time Damian Winters got evicted was in 2015. He was living with his wife and two sons in suburban Nashville when his probation officer called his landlord and informed him that Winters was a registered sex offender.\r\nThe previous year, when he was 2… [+18629 chars]",
-    politicalBias: "left"
+    politicalBias: "Left-Wing"
   }]
 };
