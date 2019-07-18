@@ -145,6 +145,13 @@ describe('Newscontroller', () => {
         done();
       });
     });
+
+    test('It should respond with correct message', (done) => {
+      request(app).get('/biasGroups').then((response) => {
+        expect(response.body).toStrictEqual(testResponses.successfulGetBiasGroupsResponse)
+        done();
+      });
+    });
   });
 
   describe('getHeadlinesBySourceId', () => {
@@ -160,6 +167,16 @@ describe('Newscontroller', () => {
     test('It should respond to the GET method', (done) => {
       request(app).get('/topics').then((response) => {
         expect(response.status).toBe(200);
+        done();
+      });
+    });
+
+    test('It should respond with correct message if News API returns multiple articles', (done) => {
+      newsApiHelpers.setupSuccessResponse(
+        testResponses.successfulNewsApiResponseForTopic);
+
+      request(app).get('/headlines/topic/trump').then((response) => {
+        expect(response.body).toStrictEqual(testResponses.successfulResponseForTopic)
         done();
       });
     });

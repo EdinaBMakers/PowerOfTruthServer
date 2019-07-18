@@ -140,3 +140,95 @@ exports.successfulResponseWithMultipleArticlesForLeftBiasGroup = {
     politicalBias: "Left-Wing"
   }]
 };
+
+exports.successfulNewsApiResponseForTopic = {
+  status: "ok",
+  totalResults: 2,
+  articles: [{
+    source: {
+      id: "cnn",
+      name: "CNN"
+    },
+    author: null,
+    title: "Trump retweets fake Reagan quote about himself",
+    description: "Trump tweets fake Ronald Reagan quote about ...Trump. CNN's Jeanne Moos reports.",
+    url: "https://www.cnn.com/videos/politics/2019/07/09/jeanne-moos-trump-tweet-fake-reagan-quote-pkg-ebof-vpx.cnn",
+    urlToImage: "https://cdn.cnn.com/cnnnext/dam/assets/190708204541-reagan-trump-fake-tweet-super-tease.jpg",
+    publishedAt: "2019-07-09T00:58:54Z",
+    content: "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds."
+  },
+  {
+    source: {
+      id: "bbc-news",
+      name: "BBC News"
+    },
+    author: "https://www.facebook.com/bbcnews",
+    title: "Trump orders tanks for Independence Day parade",
+    description: "He promises a \"special\" event, but critics liken it to military parades by authoritarian regimes.",
+    url: "https://www.bbc.co.uk/news/world-us-canada-48842428",
+    urlToImage: "https://ichef.bbci.co.uk/news/1024/branded_news/73D3/production/_107715692_gettyimages-1159570665.jpg",
+    publishedAt: "2019-07-02T15:27:09Z",
+    content: "Image copyrightMark WilsonImage caption\r\n Two tanks and other military vehicles sit on guarded rail cars at a rail yard in Washington, DC on 2 July\r\nPresident Donald Trump's plans to host a military parade on US Independence Day this week have left critics se… [+4524 chars]"
+  }]
+};
+
+exports.successfulResponseForTopic = {
+  status: "ok",
+  totalResults: 2,
+  provider: "PowerOfTruth Server",
+  articles: [{
+    source: {
+      id: "cnn",
+      name: "CNN"
+    },
+    author: null,
+    title: "Trump retweets fake Reagan quote about himself",
+    description: "Trump tweets fake Ronald Reagan quote about ...Trump. CNN's Jeanne Moos reports.",
+    url: "https://www.cnn.com/videos/politics/2019/07/09/jeanne-moos-trump-tweet-fake-reagan-quote-pkg-ebof-vpx.cnn",
+    urlToImage: "https://cdn.cnn.com/cnnnext/dam/assets/190708204541-reagan-trump-fake-tweet-super-tease.jpg",
+    publishedAt: "2019-07-09T00:58:54Z",
+    content: "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds.",
+    politicalBias: "Left-Wing"
+  },
+  {
+    source: {
+      id: "bbc-news",
+      name: "BBC News"
+    },
+    author: "https://www.facebook.com/bbcnews",
+    title: "Trump orders tanks for Independence Day parade",
+    description: "He promises a \"special\" event, but critics liken it to military parades by authoritarian regimes.",
+    url: "https://www.bbc.co.uk/news/world-us-canada-48842428",
+    urlToImage: "https://ichef.bbci.co.uk/news/1024/branded_news/73D3/production/_107715692_gettyimages-1159570665.jpg",
+    publishedAt: "2019-07-02T15:27:09Z",
+    content: "Image copyrightMark WilsonImage caption\r\n Two tanks and other military vehicles sit on guarded rail cars at a rail yard in Washington, DC on 2 July\r\nPresident Donald Trump's plans to host a military parade on US Independence Day this week have left critics se… [+4524 chars]",
+    politicalBias: "Left-Center"
+  }]
+};
+
+exports.successfulGetBiasGroupsResponse = {
+    status: "ok",
+    totalResults: 5,
+    provider: "PowerOfTruth Server",
+    biasGroups: [
+      {
+        id: "left",
+        name: "Left-Wing"
+      }, 
+      {
+        id: "left-center",
+        name: "Left-Center"
+      },
+      {
+        id: "least-biased",
+        name: "Least-Biased"
+      },
+      {
+        id: "right-center",
+        name: "Right-Center"
+      },
+      {
+        id: "right",
+        name: "Right-Wing"
+      }]
+};
