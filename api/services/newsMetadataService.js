@@ -4,23 +4,23 @@ exports.getBiasGroups = function() {
   return [
     {
       id: "left",
-      name: "left"
+      name: "Left-Wing"
     }, 
     {
       id: "left-center",
-      name: "left-center"
+      name: "Left-Center"
     },
     {
       id: "least-biased",
-      name: "least biased"
+      name: "Least-Biased"
     },
     {
       id: "right-center",
-      name: "right-center"
+      name: "Right-Center"
     },
     {
       id: "right",
-      name: "right"
+      name: "Right-Wing"
     }];
 };
 
