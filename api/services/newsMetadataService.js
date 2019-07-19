@@ -3,23 +3,23 @@
 exports.getBiasGroups = function() {
   return [
     {
-      id: "left",
+      id: "Left-Wing",
       name: "Left-Wing"
     }, 
     {
-      id: "left-center",
+      id: "Left-Center",
       name: "Left-Center"
     },
     {
-      id: "least-biased",
+      id: "Least-Biased",
       name: "Least-Biased"
     },
     {
-      id: "right-center",
+      id: "Right-Center",
       name: "Right-Center"
     },
     {
-      id: "right",
+      id: "Right-Wing",
       name: "Right-Wing"
     }];
 };
@@ -29,37 +29,37 @@ exports.getSources = function() {
     {
       id: "bbc-news",
       name: "BBC News",
-      biasGroupId: "left-center"
+      biasGroupId: "Left-Center"
     },
     {
       id: "independent",
       name: "Independent",
-      biasGroupId: "left-center"
+      biasGroupId: "Left-Center"
     },
     {
       id: "the-huffington-post",
       name: "The Huffington Post",
-      biasGroupId: "left"
+      biasGroupId: "Left-Wing"
     },
     {
       id: "al-jazeera-english",
       name: "Al Jazeera English",
-      biasGroupId: "left-center"
+      biasGroupId: "Left-Center"
     },
     {
       id: "cnn",
       name: "CNN",
-      biasGroupId: "left"
+      biasGroupId: "Left-Wing"
     },
     {
       id: "daily-mail",
       name: "Daily Mail",
-      biasGroupId: "right"
+      biasGroupId: "Right-Wing"
     },
     {
       id: "the-economist",
       name: "The Economist",
-      biasGroupId: "least-biased"
+      biasGroupId: "Least-Biased"
     }];
 };
 

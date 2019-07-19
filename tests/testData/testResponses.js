@@ -140,3 +140,167 @@ exports.successfulResponseWithMultipleArticlesForLeftBiasGroup = {
     politicalBias: "Left-Wing"
   }]
 };
+
+exports.successfullNewsApiResponseWithMultipleArticlesForAlJazeeraEnglishSource = {
+  status: "ok",
+  totalResults: 2,
+  articles: [{
+    source: {
+      id: "al-jazeera-english",
+      name: "Al Jazeera English"
+    },
+    author: "Al Jazeera",
+    title: "Afghanistan: Kabul University hit by explosion",
+    description: "At least six people have been killed and 27 wounded in blast; no claim of responsibility.",
+    url: "http://us.cnn.com/2019/07/16/opinions/border-enforcement-ice-raids-lopez-novak/index.html",
+    urlToImage: "https://www.aljazeera.com/mritems/Images/2019/7/19/d47236f7e2d54c40a4773d5de6856208_18.jpg",
+    publishedAt: "2019-07-19T06:07:00Z",
+    content: "At least six people have been killed after a bomb detonated near university premises in Afghanistan's capital on Friday, officials said.\r\nWahidullah Mayar, health ministry spokesman, wrote on Twitter that another 27 people were wounded in Friday's explosion.\r… [+1587 chars]"
+  },
+  {
+    source: {
+      id: "al-jazeera-english",
+      name: "Al Jazeera English"
+    },
+    author: "Al Jazeera",
+    title: "Not deterred': A defiant Ilhan Omar vows to fight Trump",
+    description: "One of the Congresswomen at the centre of racism row involving Trump says they will be a 'nightmare' to the president.",
+    url: "http://www.aljazeera.com/news/2019/07/deterred-defiant-ilhan-omar-vows-fight-trump-190719044326266.html",
+    urlToImage: "https://www.aljazeera.com/mritems/Images/2019/7/19/608d61e8a6764e82a9561d721d816528_18.jpg",
+    publishedAt: "2019-07-19T05:08:00Z",
+    content: "US Representative Ilhan Omar says she will not be intimidated by President Donald Trump, who has attacked her with racist comments more than once this week, as she returned to a warm welcome in her home state of Minnesota.\r\n\"We are not deterred. We are not fr… [+2546 chars]"
+  }]
+};
+
+exports.successfulResponseWithMultipleArticlesForAlJazeeraEnglishSource = {
+  status: "ok",
+  totalResults: 2,
+  provider: "PowerOfTruth Server",
+  articles: [{
+    source: {
+      id: "al-jazeera-english",
+      name: "Al Jazeera English"
+    },
+    author: "Al Jazeera",
+    title: "Afghanistan: Kabul University hit by explosion",
+    description: "At least six people have been killed and 27 wounded in blast; no claim of responsibility.",
+    url: "http://us.cnn.com/2019/07/16/opinions/border-enforcement-ice-raids-lopez-novak/index.html",
+    urlToImage: "https://www.aljazeera.com/mritems/Images/2019/7/19/d47236f7e2d54c40a4773d5de6856208_18.jpg",
+    publishedAt: "2019-07-19T06:07:00Z",
+    content: "At least six people have been killed after a bomb detonated near university premises in Afghanistan's capital on Friday, officials said.\r\nWahidullah Mayar, health ministry spokesman, wrote on Twitter that another 27 people were wounded in Friday's explosion.\r… [+1587 chars]",
+    politicalBias: "Left-Center"
+  },
+  {
+    source: {
+      id: "al-jazeera-english",
+      name: "Al Jazeera English"
+    },
+    author: "Al Jazeera",
+    title: "Not deterred': A defiant Ilhan Omar vows to fight Trump",
+    description: "One of the Congresswomen at the centre of racism row involving Trump says they will be a 'nightmare' to the president.",
+    url: "http://www.aljazeera.com/news/2019/07/deterred-defiant-ilhan-omar-vows-fight-trump-190719044326266.html",
+    urlToImage: "https://www.aljazeera.com/mritems/Images/2019/7/19/608d61e8a6764e82a9561d721d816528_18.jpg",
+    publishedAt: "2019-07-19T05:08:00Z",
+    content: "US Representative Ilhan Omar says she will not be intimidated by President Donald Trump, who has attacked her with racist comments more than once this week, as she returned to a warm welcome in her home state of Minnesota.\r\n\"We are not deterred. We are not fr… [+2546 chars]",
+    politicalBias: "Left-Center"
+  }]
+};
+
+exports.successfulNewsApiResponseForTopic = {
+  status: "ok",
+  totalResults: 2,
+  articles: [{
+    source: {
+      id: "cnn",
+      name: "CNN"
+    },
+    author: null,
+    title: "Trump retweets fake Reagan quote about himself",
+    description: "Trump tweets fake Ronald Reagan quote about ...Trump. CNN's Jeanne Moos reports.",
+    url: "https://www.cnn.com/videos/politics/2019/07/09/jeanne-moos-trump-tweet-fake-reagan-quote-pkg-ebof-vpx.cnn",
+    urlToImage: "https://cdn.cnn.com/cnnnext/dam/assets/190708204541-reagan-trump-fake-tweet-super-tease.jpg",
+    publishedAt: "2019-07-09T00:58:54Z",
+    content: "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds."
+  },
+  {
+    source: {
+      id: "bbc-news",
+      name: "BBC News"
+    },
+    author: "https://www.facebook.com/bbcnews",
+    title: "Trump orders tanks for Independence Day parade",
+    description: "He promises a \"special\" event, but critics liken it to military parades by authoritarian regimes.",
+    url: "https://www.bbc.co.uk/news/world-us-canada-48842428",
+    urlToImage: "https://ichef.bbci.co.uk/news/1024/branded_news/73D3/production/_107715692_gettyimages-1159570665.jpg",
+    publishedAt: "2019-07-02T15:27:09Z",
+    content: "Image copyrightMark WilsonImage caption\r\n Two tanks and other military vehicles sit on guarded rail cars at a rail yard in Washington, DC on 2 July\r\nPresident Donald Trump's plans to host a military parade on US Independence Day this week have left critics se… [+4524 chars]"
+  }]
+};
+
+exports.successfulResponseForTopic = {
+  status: "ok",
+  totalResults: 2,
+  provider: "PowerOfTruth Server",
+  articles: [{
+    source: {
+      id: "cnn",
+      name: "CNN"
+    },
+    author: null,
+    title: "Trump retweets fake Reagan quote about himself",
+    description: "Trump tweets fake Ronald Reagan quote about ...Trump. CNN's Jeanne Moos reports.",
+    url: "https://www.cnn.com/videos/politics/2019/07/09/jeanne-moos-trump-tweet-fake-reagan-quote-pkg-ebof-vpx.cnn",
+    urlToImage: "https://cdn.cnn.com/cnnnext/dam/assets/190708204541-reagan-trump-fake-tweet-super-tease.jpg",
+    publishedAt: "2019-07-09T00:58:54Z",
+    content: "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds.",
+    politicalBias: "Left-Wing"
+  },
+  {
+    source: {
+      id: "bbc-news",
+      name: "BBC News"
+    },
+    author: "https://www.facebook.com/bbcnews",
+    title: "Trump orders tanks for Independence Day parade",
+    description: "He promises a \"special\" event, but critics liken it to military parades by authoritarian regimes.",
+    url: "https://www.bbc.co.uk/news/world-us-canada-48842428",
+    urlToImage: "https://ichef.bbci.co.uk/news/1024/branded_news/73D3/production/_107715692_gettyimages-1159570665.jpg",
+    publishedAt: "2019-07-02T15:27:09Z",
+    content: "Image copyrightMark WilsonImage caption\r\n Two tanks and other military vehicles sit on guarded rail cars at a rail yard in Washington, DC on 2 July\r\nPresident Donald Trump's plans to host a military parade on US Independence Day this week have left critics se… [+4524 chars]",
+    politicalBias: "Left-Center"
+  }]
+};
+
+exports.successfulGetBiasGroupsResponse = {
+    status: "ok",
+    totalResults: 5,
+    provider: "PowerOfTruth Server",
+    biasGroups: [
+      {
+        id: "Left-Wing",
+        name: "Left-Wing"
+      }, 
+      {
+        id: "Left-Center",
+        name: "Left-Center"
+      },
+      {
+        id: "Least-Biased",
+        name: "Least-Biased"
+      },
+      {
+        id: "Right-Center",
+        name: "Right-Center"
+      },
+      {
+        id: "Right-Wing",
+        name: "Right-Wing"
+      }]
+};
+
+exports.successfulGetTopicsResponse = {
+  status: "ok",
+    totalResults: 4,
+    provider: "PowerOfTruth Server",
+    topics: ["Trump", "Brexit", "Bitcoin", "EU"]
+};

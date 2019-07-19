@@ -19,14 +19,12 @@ exports.translateHeadlinesResponse = function(newsApiHeadlinesResponse) {
     });
   });
 
-  var headlinesResponse = {
+  return {
     status: newsApiHeadlinesResponse.status,
     totalResults: newsApiHeadlinesResponse.totalResults,
     provider: "PowerOfTruth Server",
     articles: articles
   };
-
-  return headlinesResponse
 };
 
 exports.translateEverythingResponse = function(newsApiEverythingResponse) {
@@ -46,12 +44,10 @@ exports.translateEverythingResponse = function(newsApiEverythingResponse) {
     });
   });
 
-  var everythingResponse = {
+  return {
     status: newsApiEverythingResponse.status,
     totalResults:newsApiEverythingResponse.totalResults,
     provider: "PowerOfTruth Server",
     articles: articles
   };
-
-  return everythingResponse
 };
