@@ -161,11 +161,47 @@ describe('Newscontroller', () => {
         done();
       });
     });
+
+    test('It should respond with correct message if News API returns multiple articles', (done) => {
+      newsApiHelpers.setupSuccessResponse(
+        testResponses.successfullNewsApiResponseWithMultipleArticlesForAlJazeeraEnglishSource);
+
+      request(app).get('/headlines/source/al-jazeera-english').then((response) => {
+        expect(response.body).toStrictEqual(testResponses.successfulResponseWithMultipleArticlesForAlJazeeraEnglishSource);
+        done();
+      });
+    });
+
+    test('It should return failure response if News API request failed', (done) => {
+      newsApiHelpers.setupFailureResponse();
+
+      request(app).get('/headlines/source/cnn').then((response) => {
+        expect(response.body.status).toBe('error');
+        expect(response.body.error).toBe('PowerOfTruth Server Error');
+        done();
+      });
+    });
   });
 
   describe('getTopics', () => {
     test('It should respond to the GET method', (done) => {
       request(app).get('/topics').then((response) => {
+        expect(response.status).toBe(200);
+        done();
+      });
+    });
+
+    test('It should respond with correct message', (done) => {
+      request(app).get('/topics').then((response) => {
+        expect(response.body).toStrictEqual(testResponses.successfulGetTopicsResponse)
+        done();
+      });
+    });
+  });
+
+  describe('getHeadlinesByTopic', () => {
+    test('It should respond to the GET method', (done) => {
+      request(app).get('/headlines/topic/trump').then((response) => {
         expect(response.status).toBe(200);
         done();
       });
@@ -180,12 +216,13 @@ describe('Newscontroller', () => {
         done();
       });
     });
-  });
 
-  describe('getHeadlinesByTopic', () => {
-    test('It should respond to the GET method', (done) => {
+    test('It should return failure response if News API request failed', (done) => {
+      newsApiHelpers.setupFailureResponse();
+
       request(app).get('/headlines/topic/trump').then((response) => {
-        expect(response.status).toBe(200);
+        expect(response.body.status).toBe('error');
+        expect(response.body.error).toBe('PowerOfTruth Server Error');
         done();
       });
     });

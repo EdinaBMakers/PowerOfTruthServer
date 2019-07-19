@@ -141,6 +141,71 @@ exports.successfulResponseWithMultipleArticlesForLeftBiasGroup = {
   }]
 };
 
+exports.successfullNewsApiResponseWithMultipleArticlesForAlJazeeraEnglishSource = {
+  status: "ok",
+  totalResults: 2,
+  articles: [{
+    source: {
+      id: "al-jazeera-english",
+      name: "Al Jazeera English"
+    },
+    author: "Al Jazeera",
+    title: "Afghanistan: Kabul University hit by explosion",
+    description: "At least six people have been killed and 27 wounded in blast; no claim of responsibility.",
+    url: "http://us.cnn.com/2019/07/16/opinions/border-enforcement-ice-raids-lopez-novak/index.html",
+    urlToImage: "https://www.aljazeera.com/mritems/Images/2019/7/19/d47236f7e2d54c40a4773d5de6856208_18.jpg",
+    publishedAt: "2019-07-19T06:07:00Z",
+    content: "At least six people have been killed after a bomb detonated near university premises in Afghanistan's capital on Friday, officials said.\r\nWahidullah Mayar, health ministry spokesman, wrote on Twitter that another 27 people were wounded in Friday's explosion.\r… [+1587 chars]"
+  },
+  {
+    source: {
+      id: "al-jazeera-english",
+      name: "Al Jazeera English"
+    },
+    author: "Al Jazeera",
+    title: "Not deterred': A defiant Ilhan Omar vows to fight Trump",
+    description: "One of the Congresswomen at the centre of racism row involving Trump says they will be a 'nightmare' to the president.",
+    url: "http://www.aljazeera.com/news/2019/07/deterred-defiant-ilhan-omar-vows-fight-trump-190719044326266.html",
+    urlToImage: "https://www.aljazeera.com/mritems/Images/2019/7/19/608d61e8a6764e82a9561d721d816528_18.jpg",
+    publishedAt: "2019-07-19T05:08:00Z",
+    content: "US Representative Ilhan Omar says she will not be intimidated by President Donald Trump, who has attacked her with racist comments more than once this week, as she returned to a warm welcome in her home state of Minnesota.\r\n\"We are not deterred. We are not fr… [+2546 chars]"
+  }]
+};
+
+exports.successfulResponseWithMultipleArticlesForAlJazeeraEnglishSource = {
+  status: "ok",
+  totalResults: 2,
+  provider: "PowerOfTruth Server",
+  articles: [{
+    source: {
+      id: "al-jazeera-english",
+      name: "Al Jazeera English"
+    },
+    author: "Al Jazeera",
+    title: "Afghanistan: Kabul University hit by explosion",
+    description: "At least six people have been killed and 27 wounded in blast; no claim of responsibility.",
+    url: "http://us.cnn.com/2019/07/16/opinions/border-enforcement-ice-raids-lopez-novak/index.html",
+    urlToImage: "https://www.aljazeera.com/mritems/Images/2019/7/19/d47236f7e2d54c40a4773d5de6856208_18.jpg",
+    publishedAt: "2019-07-19T06:07:00Z",
+    content: "At least six people have been killed after a bomb detonated near university premises in Afghanistan's capital on Friday, officials said.\r\nWahidullah Mayar, health ministry spokesman, wrote on Twitter that another 27 people were wounded in Friday's explosion.\r… [+1587 chars]",
+    politicalBias: "Left-Center"
+  },
+  {
+    source: {
+      id: "al-jazeera-english",
+      name: "Al Jazeera English"
+    },
+    author: "Al Jazeera",
+    title: "Not deterred': A defiant Ilhan Omar vows to fight Trump",
+    description: "One of the Congresswomen at the centre of racism row involving Trump says they will be a 'nightmare' to the president.",
+    url: "http://www.aljazeera.com/news/2019/07/deterred-defiant-ilhan-omar-vows-fight-trump-190719044326266.html",
+    urlToImage: "https://www.aljazeera.com/mritems/Images/2019/7/19/608d61e8a6764e82a9561d721d816528_18.jpg",
+    publishedAt: "2019-07-19T05:08:00Z",
+    content: "US Representative Ilhan Omar says she will not be intimidated by President Donald Trump, who has attacked her with racist comments more than once this week, as she returned to a warm welcome in her home state of Minnesota.\r\n\"We are not deterred. We are not fr… [+2546 chars]",
+    politicalBias: "Left-Center"
+  }]
+};
+
 exports.successfulNewsApiResponseForTopic = {
   status: "ok",
   totalResults: 2,
@@ -212,23 +277,30 @@ exports.successfulGetBiasGroupsResponse = {
     provider: "PowerOfTruth Server",
     biasGroups: [
       {
-        id: "left",
+        id: "Left-Wing",
         name: "Left-Wing"
       }, 
       {
-        id: "left-center",
+        id: "Left-Center",
         name: "Left-Center"
       },
       {
-        id: "least-biased",
+        id: "Least-Biased",
         name: "Least-Biased"
       },
       {
-        id: "right-center",
+        id: "Right-Center",
         name: "Right-Center"
       },
       {
-        id: "right",
+        id: "Right-Wing",
         name: "Right-Wing"
       }]
+};
+
+exports.successfulGetTopicsResponse = {
+  status: "ok",
+    totalResults: 4,
+    provider: "PowerOfTruth Server",
+    topics: ["Trump", "Brexit", "Bitcoin", "EU"]
 };
