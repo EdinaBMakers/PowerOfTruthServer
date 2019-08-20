@@ -55,11 +55,6 @@ exports.getSources = function() {
       id: "daily-mail",
       name: "Daily Mail",
       biasGroupId: "Right-Wing"
-    },
-    {
-      id: "the-economist",
-      name: "The Economist",
-      biasGroupId: "Least-Biased"
     }];
 };
 
